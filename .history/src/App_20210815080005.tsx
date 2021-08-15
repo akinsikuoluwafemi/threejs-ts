@@ -1,0 +1,49 @@
+import React, {useRef} from 'react';
+import './App.scss';
+import { Canvas, useFrame } from '@react-three/fiber';
+
+import {  Plane, Sphere, RoundedBox, ScreenQuad,OrbitControls } from '@react-three/drei';
+
+
+const Box = (props) => {
+  const mesh = useRef<THREE.mesh>(null);
+  const [hovered, setHover] = useState(false)
+
+  useFrame(() => {
+
+   return mesh.current?.rotation.x = mesh.current?.rotation.y += 0.01
+  
+  })
+
+  return (
+    <div>
+      Box
+    </div>
+  )
+}
+
+
+
+function App() {
+  
+  
+  
+  return (
+    <>
+      <Canvas
+        
+      >
+        
+        
+        <Box/>
+
+       
+
+
+
+      </Canvas>
+    </>
+  );
+}
+
+export default App;
